@@ -8,11 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/products")
-public class ProductServlet extends HttpServlet {
-
-    private ProductRepository productRepository;
-    private Product product;
+@WebServlet(urlPatterns = "/products/*")
+public class SingleProductServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
@@ -29,10 +26,15 @@ public class ProductServlet extends HttpServlet {
         this.productRepository.insert(new Product("Fish", 1.1f));
     }
 
+    private ProductRepository productRepository;
+    private Product product;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String pathInfo = request.getPathInfo();
         PrintWriter writer = response.getWriter();
+        String id = pathInfo.replaceFirst("/", "");
+        product = productRepository.findByID(Long.parseLong(id));
 
         writer.println("<table>");
         writer.println("<tr>");
@@ -41,13 +43,14 @@ public class ProductServlet extends HttpServlet {
         writer.println("<th>cost</th>");
         writer.println("</tr>");
 
-        for (Product product : productRepository.findAll()) {
-            writer.println("<tr>");
-            writer.println("<td>" + product.getId() + "</td>");
-            writer.println("<td>" + product.getTitle() + "</td>");
-            writer.println("<td>" + product.getCost() + "</td>");
-            writer.println("</tr>");
-        }
+
+        writer.println("<table>");
+        writer.println("<tr>");
+        writer.println("<td>" + product.getId() + "</td>");
+        writer.println("<td>" + product.getTitle() + "</td>");
+        writer.println("<td>" + product.getCost() + "</td>");
+        writer.println("</tr>");
         writer.println("</table>");
+
     }
 }
