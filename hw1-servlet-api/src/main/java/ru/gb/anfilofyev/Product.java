@@ -8,8 +8,9 @@ public class Product {
 
     private String title;
 
-    public Product(String title) {
+    public Product(String title, float cost) {
         this.title = title;
+        this.cost = cost;
     }
 
     public long getId() {
