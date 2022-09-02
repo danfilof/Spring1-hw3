@@ -2,31 +2,23 @@ package ru.gb.anfilofyev;
 
 public class Product {
 
-    private long id;
-
-    private float cost;
+    private Long id;
 
     private String title;
 
-    public Product(String title, float cost) {
+    private float price;
+
+    public Product(String title, float price) {
         this.title = title;
-        this.cost = cost;
+        this.price = price;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public float getCost() {
-        return cost;
-    }
-
-    public void setCost(float cost) {
-        this.cost = cost;
     }
 
     public String getTitle() {
@@ -35,5 +27,13 @@ public class Product {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 }

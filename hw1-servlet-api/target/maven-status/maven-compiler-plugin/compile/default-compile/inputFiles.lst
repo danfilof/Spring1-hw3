@@ -1,4 +1,5 @@
-C:\Java\Spring1\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\Product.java
-C:\Java\Spring1\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\ProductRepository.java
-C:\Java\Spring1\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\ProductServlet.java
-C:\Java\Spring1\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\SingleProductServlet.java
+C:\Java\Spring1-test\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\ProductController.java
+C:\Java\Spring1-test\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\WebInitialiser.java
+C:\Java\Spring1-test\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\AppConfig.java
+C:\Java\Spring1-test\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\ProductRepository.java
+C:\Java\Spring1-test\hw1-servlet-api\src\main\java\ru\gb\anfilofyev\Product.java
