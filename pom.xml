@@ -17,6 +17,7 @@
 
     <modules>
         <module>hw1-servlet-api</module>
+        <module>lesson4-spring-boot</module>
     </modules>
 
     <dependencies>
