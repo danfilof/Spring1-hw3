@@ -46,6 +46,7 @@
                     <input th:field="*{price}" type="text" class="form-control" id="price" name="price" placeholder="Enter price" >
                     <label>Availability</label>
                     <input th:field="*{stockStatus}" type="text" class="form-control" id="stockStatus" name="title" placeholder="Check availability" >
+                    <p class="text-danger" th:if="${#fields.hasErrors('stockStatus')}" th:errors="*{stockStatus}"></p>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
