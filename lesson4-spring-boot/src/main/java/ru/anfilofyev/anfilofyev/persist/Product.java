@@ -1,4 +1,4 @@
-package ru.anfilofyev.persist;
+package ru.anfilofyev.anfilofyev.persist;
 
 
 import jdk.jfr.BooleanFlag;

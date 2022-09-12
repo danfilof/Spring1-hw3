@@ -1,4 +1,4 @@
-package ru.anfilofyev.controller;
+package ru.anfilofyev.anfilofyev.controller;
 
 
 import lombok.RequiredArgsConstructor;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.anfilofyev.persist.Product;
-import ru.anfilofyev.persist.ProductRepository;
+import ru.anfilofyev.anfilofyev.persist.Product;
+import ru.anfilofyev.anfilofyev.persist.ProductRepository;
 
 import javax.validation.Valid;
 

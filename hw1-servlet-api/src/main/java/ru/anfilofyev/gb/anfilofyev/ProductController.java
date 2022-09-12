@@ -1,4 +1,4 @@
-package ru.gb.anfilofyev;
+package ru.anfilofyev.gb.anfilofyev;
 
 
 import lombok.RequiredArgsConstructor;

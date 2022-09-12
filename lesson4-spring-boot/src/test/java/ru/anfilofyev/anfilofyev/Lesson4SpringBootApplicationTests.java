@@ -1,4 +1,4 @@
-package ru.anfilofyev;
+package ru.anfilofyev.anfilofyev;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
