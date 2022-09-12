@@ -23,7 +23,7 @@ public class ProductRepository {
         this.insert(new Product("Milk", 1f, "Default", false));
         this.insert(new Product("Headset", 0.7f, "black", false));
         this.insert(new Product("Vacuum cleaner", 100500f, "red", true));
-        this.insert(new Product("Bread", 4f, "Default", true));
+        this.insert(new Product("Honey", 4f, "Default", true));
     }
 
     public List<Product> findAll() {
