@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hw3" />
         <module name="lesson4-spring-boot" />
+        <module name="lesson5-hibernate" />
       </profile>
     </annotationProcessing>
   </component>
