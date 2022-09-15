@@ -9,6 +9,7 @@
 .idea/**/shelf
 .hw1-servlet-api
 .lesson4-spring-boot
+.lesson5-hybernate.main.java.ru.anfilofyev.Main
 
 # AWS User-specific
 .idea/**/aws.xml

@@ -11,6 +11,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+//
+//        EntityManagerFactory entityManagerFactory = (EntityManagerFactory) new Configuration()
+//                .configure("hibernate.cfg.xml")
+//                .buildSessionFactory();
+//
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 
 //        INSERT
@@ -37,14 +43,14 @@ public class Main {
 //        }
 
 //        UPDATE
-        entityManager.getTransaction().begin();
-
-        Product product = entityManager.find(Product.class, 1L);
-        product.setTitle("RTX 2070ti");
-
-        entityManager.getTransaction().commit();
-
-        entityManager.close();
-        entityManagerFactory.close();
+//        entityManager.getTransaction().begin();
+//
+//        Product product = entityManager.find(Product.class, 1L);
+//        product.setTitle("RTX 2070ti");
+//
+//        entityManager.getTransaction().commit();
+//
+//        entityManager.close();
+//        entityManagerFactory.close();
     }
 }
