@@ -19,7 +19,9 @@ public class MainLesson6 {
                 .buildSessionFactory();
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Good prodName = new Good(GoodType.PRODUCER_NAME, "Nnidia");
+
+
+        Good prodName = new Good(GoodType.PRODUCER_NAME, "Nvidia");
         Good prodSupEmail = new Good(GoodType.PRODUCER_SUPPORT_EMAIL, "nvidia-support.com");
         List<Good> goodList = Arrays.asList(prodName, prodSupEmail);
 
