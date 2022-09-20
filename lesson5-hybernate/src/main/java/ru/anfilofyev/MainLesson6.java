@@ -46,6 +46,15 @@ public class MainLesson6 {
             product1.getGoods().forEach(System.out::println);
         }
 
+        Product product1 = new Product("Product2", goodList, 11F, "Black");
+        Product product2 = new Product("Product2", goodList, 1F, "Default");
+        product2.setPrice(2F);
+
+        goodList.forEach(good -> good.setProduct(product2));
+        entityManager.getTransaction().begin();
+        entityManager.persist(product2);
+        entityManager.getTransaction().commit();
+
                 entityManager.close();
         entityManagerFactory.close();
     }
