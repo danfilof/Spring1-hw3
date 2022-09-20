@@ -3,29 +3,35 @@ package ru.anfilofyev.anfilofyev.persist;
 
 import jdk.jfr.BooleanFlag;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+@Entity
+@Table(name = "products")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Product {
 
-    @NotNull
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @Column(nullable = false, unique = true, length = 1024)
     private String title;
 
-
+    @Column(nullable = false)
     private float price;
 
-    @NotNull
+    @Column(nullable = false)
     private String color;
 
-    @NotBlank(message = "Cannot be empty. The item is either in stock or not.")
+    @Column(nullable = false)
     private boolean stockStatus;
 
     public Product(String title, float price, String color, boolean stockStatus) {
@@ -34,28 +40,4 @@ public class Product {
         this.color = color;
         this.stockStatus = stockStatus;
     }
-
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public float getPrice() {
-//        return price;
-//    }
-//
-//    public void setPrice(float price) {
-//        this.price = price;
-//    }
 }
