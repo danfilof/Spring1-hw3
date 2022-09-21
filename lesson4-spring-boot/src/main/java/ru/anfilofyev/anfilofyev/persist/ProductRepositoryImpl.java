@@ -22,6 +22,7 @@ public class ProductRepositoryImpl implements ProductRepository{
        return Optional.ofNullable(entityManager.find(Product.class, id));
     }
 
+    @Transactional
     public Product save (Product product) {
         if (product.getId() != null) {
             entityManager.merge(product);
@@ -31,6 +32,7 @@ public class ProductRepositoryImpl implements ProductRepository{
         return product;
     }
 
+    @Transactional
     public void deleteById(long id) {
         entityManager.createQuery("delete from Product p where p.id = :id")
                 .setParameter("id", id)
