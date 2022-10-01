@@ -1,14 +1,16 @@
-package ru.anfilofyev.anfilofyev.persist;
+package ru.anfilofyev.anfilofyev.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.stereotype.Repository;
+import ru.anfilofyev.anfilofyev.model.Product;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long>, QuerydslPredicateExecutor<Product> {
 
     List<Product> findAllByTitleLike(String titleFilter);
 

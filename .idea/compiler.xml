@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="lesson4-spring-boot" options="-parameters" />
+      <module name="lesson4-spring-boot" options="-parameters --add-modules java.compiler" />
     </option>
   </component>
 </project>

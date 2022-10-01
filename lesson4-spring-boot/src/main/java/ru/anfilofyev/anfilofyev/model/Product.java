@@ -1,7 +1,8 @@
-package ru.anfilofyev.anfilofyev.persist;
+package ru.anfilofyev.anfilofyev.model;
 
 
 import jdk.jfr.BooleanFlag;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     @Id
