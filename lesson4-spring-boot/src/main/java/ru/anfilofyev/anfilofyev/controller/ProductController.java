@@ -14,6 +14,7 @@ import ru.anfilofyev.anfilofyev.repository.ProductRepository;
 import ru.anfilofyev.anfilofyev.service.ProductService;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -34,9 +35,15 @@ public class ProductController {
 //    }
 
     @GetMapping
-    public String listPage(@RequestParam(required = false) String titleFilter, Model model){
-
-        model.addAttribute("products", productService.findAllByFilter(titleFilter));
+    public String listPage(
+            @RequestParam(required = false) String titleFilter,
+            @RequestParam(required = false) Optional<Integer> page,
+            @RequestParam(required = false) Optional<Integer> size,
+            Model model
+    ) {
+        Integer pageValue = page.orElse(1) - 1;
+        Integer sizeValue = size.orElse(3);
+        model.addAttribute("products", productService.findAllByFilter(titleFilter, pageValue, sizeValue));
         return "product";
     }
 

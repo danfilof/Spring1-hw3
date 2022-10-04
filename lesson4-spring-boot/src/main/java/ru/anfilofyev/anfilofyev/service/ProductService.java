@@ -2,6 +2,8 @@ package ru.anfilofyev.anfilofyev.service;
 
 import com.querydsl.core.BooleanBuilder;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import ru.anfilofyev.anfilofyev.model.Product;
 import ru.anfilofyev.anfilofyev.model.QProduct;
@@ -21,17 +23,22 @@ public class ProductService {
     private final ProductDtoMapper mapper;
     private final ProductRepository productRepository;
 
-    public List<ProductDto> findAllByFilter(String titleFilter) {
+    public Page<ProductDto> findAllByFilter(String titleFilter, int page, int size) {
+//
+//        QProduct product = QProduct.product;
+//        BooleanBuilder predicate = new BooleanBuilder();
+//
+//        if (titleFilter != null && !titleFilter.isBlank()) {
+//            predicate.and(product.title.contains(titleFilter.trim()));
+//        }
+//
+//        return StreamSupport.stream(productRepository.findAll(predicate, PageRequest.of(page, size)).spliterator(), true)
+//                .map(mapper::map).collect(Collectors.toList());
 
-        QProduct product = QProduct.product;
-        BooleanBuilder predicate = new BooleanBuilder();
+        titleFilter = titleFilter == null || titleFilter.isBlank() ? null : "%" + titleFilter.trim() + "%";
+        return productRepository.productsByFilter(titleFilter, PageRequest.of(page, size))
+                .map(mapper::map);
 
-        if (titleFilter != null && !titleFilter.isBlank()) {
-            predicate.and(product.title.contains(titleFilter.trim()));
-        }
-
-        return StreamSupport.stream(productRepository.findAll(predicate).spliterator(), true)
-                .map(mapper::map).collect(Collectors.toList());
     }
 
     public Optional<ProductDto> findProductById(Long id) {
