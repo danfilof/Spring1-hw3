@@ -51,7 +51,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-    public static ProductDto productToDto(Product product) {
+    private static ProductDto productToDto(Product product) {
         return new ProductDto(product.getId(), product.getTitle(), product.getPrice(), product.getColor(), product.isStockStatus());
     }
 }
